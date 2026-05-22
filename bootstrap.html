@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anmol Ratna Chhetri | Bootstrap</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="bootstrap.css">
+</head>
+<body>
+
+<!-- Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">Anmol<span>Chhetri</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" id="nav-home">Home</a></li>
+    <li><a href="fullstack.html" id="nav-fullstack">Full Stack</a></li>
+    <li><a href="html.html" id="nav-html">HTML</a></li>
+    <li><a href="css.html" id="nav-css">CSS</a></li>
+    <li><a href="bootstrap.html" class="active" id="nav-bootstrap">Bootstrap</a></li>
+    <li><a href="javascript.html" id="nav-javascript">JavaScript</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+</nav>
+
+<div class="page active" id="page-bootstrap">
+  <div class="page-hero" data-bg-text="BOOTSTRAP">
+    <div>
+      <div class="page-tag">Module 04</div>
+      <div class="page-num">The Bootstrap CSS Framework</div>
+      <h1 class="page-title"><span class="accent">Bootstrap</span> Framework</h1>
+    </div>
+  </div>
+
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab(this,'bs-intro')">Introduction</button>
+    <button class="tab-btn" onclick="switchTab(this,'bs-grid')">Grid System</button>
+    <button class="tab-btn" onclick="switchTab(this,'bs-components')">Components</button>
+    <button class="tab-btn" onclick="switchTab(this,'bs-demo')">Live Demo</button>
+  </div>
+
+  <div class="content-area">
+    <div class="tab-panel active" id="bs-intro">
+      <div class="section-divider"><h3>What is Bootstrap?</h3></div>
+      <div class="callout">
+        <strong>Bootstrap</strong> is the world's most popular open-source CSS framework. Created by Twitter, it provides pre-built, responsive components and a powerful grid system that lets developers build consistent, mobile-first websites rapidly — without writing all CSS from scratch.
+      </div>
+      <div class="concept-grid">
+        <div class="concept-card">
+          <h4><i class="fas fa-mobile-alt"></i> Mobile First</h4>
+          <p>Bootstrap is designed mobile-first. Styles apply to small screens by default, with breakpoints (sm, md, lg, xl, xxl) progressively enhancing for larger screens.</p>
+        </div>
+        <div class="concept-card">
+          <h4><i class="fas fa-th-large"></i> Grid System</h4>
+          <p>A flexible 12-column grid system using containers, rows, and columns. Columns can be sized differently at each breakpoint for complex, responsive layouts.</p>
+        </div>
+        <div class="concept-card">
+          <h4><i class="fas fa-puzzle-piece"></i> Ready Components</h4>
+          <p>Dozens of pre-built UI components: navbar, cards, modals, alerts, carousels, forms, buttons, badges, accordions, and more. Each is accessible and responsive by default.</p>
+        </div>
+        <div class="concept-card">
+          <h4><i class="fas fa-toolbox"></i> Utility Classes</h4>
+          <p>Hundreds of single-purpose utility classes for spacing (<code>m-3</code>, <code>p-4</code>), colours (<code>text-primary</code>), display (<code>d-flex</code>), and more — removing the need for custom CSS in many cases.</p>
+        </div>
+      </div>
+      <div class="section-divider"><h3>How to Include Bootstrap</h3></div>
+      <div class="code-block">
+        <div class="code-header">
+          <div style="display:flex;align-items:center;gap:1rem">
+            <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+            <span class="code-lang">HTML — Including Bootstrap via CDN</span>
+          </div>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+<pre><span class="tag">&lt;head&gt;</span>
+  <span class="cm">&lt;!-- Bootstrap CSS --&gt;</span>
+  <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="val">"stylesheet"</span>
+    <span class="attr">href</span>=<span class="val">"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+
+<span class="tag">&lt;body&gt;</span>
+  <span class="cm">&lt;!-- Your content using Bootstrap classes --&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"container mt-4"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h1</span> <span class="attr">class</span>=<span class="val">"display-4 text-primary"</span><span class="tag">&gt;</span>Hello Bootstrap!<span class="tag">&lt;/h1&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+
+  <span class="cm">&lt;!-- Bootstrap JS (for interactive components) --&gt;</span>
+  <span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="val">"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
+<span class="tag">&lt;/body&gt;</span></pre>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="bs-grid">
+      <div class="section-divider"><h3>Bootstrap Grid System</h3></div>
+      <div class="callout">The grid divides the page into <strong>12 columns</strong>. You choose how many columns each element spans using classes like <code>col-6</code> (half width) or <code>col-md-4</code> (one-third on medium+ screens).</p>
+      </div>
+      <div class="code-block">
+        <div class="code-header">
+          <div style="display:flex;align-items:center;gap:1rem">
+            <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+            <span class="code-lang">HTML — Bootstrap Grid Examples</span>
+          </div>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+<pre><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"container"</span><span class="tag">&gt;</span>
+
+  <span class="cm">&lt;!-- Two equal columns on all screen sizes --&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"row"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-6"</span><span class="tag">&gt;</span>Left Half<span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-6"</span><span class="tag">&gt;</span>Right Half<span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+
+  <span class="cm">&lt;!-- Stacks on mobile, 3 cols on medium+ screens --&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"row"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-12 col-md-4"</span><span class="tag">&gt;</span>Card 1<span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-12 col-md-4"</span><span class="tag">&gt;</span>Card 2<span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-12 col-md-4"</span><span class="tag">&gt;</span>Card 3<span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+
+<span class="tag">&lt;/div&gt;</span></pre>
+      </div>
+
+      <div class="demo-box">
+        <div class="demo-header"><i class="fas fa-th"></i>&nbsp; Grid Visualiser</div>
+        <div class="demo-content">
+          <p style="font-size:0.75rem;color:var(--muted);margin-bottom:0.75rem">12 columns total. Blue boxes show how column spans work:</p>
+          <div class="container-fluid px-0">
+            <div class="row g-1 mb-1">
+              <div class="col-12"><div class="grid-col">col-12 (Full width)</div></div>
+            </div>
+            <div class="row g-1 mb-1">
+              <div class="col-6"><div class="grid-col">col-6</div></div>
+              <div class="col-6"><div class="grid-col">col-6</div></div>
+            </div>
+            <div class="row g-1 mb-1">
+              <div class="col-4"><div class="grid-col">col-4</div></div>
+              <div class="col-4"><div class="grid-col">col-4</div></div>
+              <div class="col-4"><div class="grid-col">col-4</div></div>
+            </div>
+            <div class="row g-1 mb-1">
+              <div class="col-3"><div class="grid-col">col-3</div></div>
+              <div class="col-3"><div class="grid-col">col-3</div></div>
+              <div class="col-3"><div class="grid-col">col-3</div></div>
+              <div class="col-3"><div class="grid-col">col-3</div></div>
+            </div>
+            <div class="row g-1">
+              <div class="col-8"><div class="grid-col">col-8</div></div>
+              <div class="col-4"><div class="grid-col">col-4</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="bs-components">
+      <div class="section-divider"><h3>Bootstrap Components</h3></div>
+      <div class="concept-grid">
+        <div class="concept-card">
+          <h4><i class="fas fa-credit-card"></i> Cards</h4>
+          <p>Flexible content containers with headers, body, footers, images, and lists. Used for blog posts, products, user profiles. Class: <code>card</code>, <code>card-body</code>, <code>card-title</code>.</p>
+        </div>
+        <div class="concept-card">
+          <h4><i class="fas fa-bars"></i> Navbar</h4>
+          <p>Responsive navigation bar that collapses to a hamburger on mobile. Includes brand, links, dropdowns. Classes: <code>navbar</code>, <code>navbar-expand-lg</code>, <code>navbar-toggler</code>.</p>
+        </div>
+        <div class="concept-card">
+          <h4><i class="fas fa-window-maximize"></i> Modals</h4>
+          <p>Dialog boxes that overlay the page. Use for confirmations, login forms, image previews. Triggered by data attributes: <code>data-bs-toggle="modal"</code>. No custom JS needed.</p>
+        </div>
+        <div class="concept-card">
+          <h4><i class="fas fa-exclamation-circle"></i> Alerts</h4>
+          <p>Feedback messages for the user. Colour-coded by context: <code>alert-success</code>, <code>alert-danger</code>, <code>alert-warning</code>, <code>alert-info</code>. Can be dismissible.</p>
+        </div>
+      </div>
+      <div class="code-block">
+        <div class="code-header">
+          <div style="display:flex;align-items:center;gap:1rem">
+            <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+            <span class="code-lang">HTML — Bootstrap Card Component</span>
+          </div>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+<pre><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card"</span> <span class="attr">style</span>=<span class="val">"width: 18rem;"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="val">"image.jpg"</span> <span class="attr">class</span>=<span class="val">"card-img-top"</span> <span class="attr">alt</span>=<span class="val">"..."</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card-body"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h5</span> <span class="attr">class</span>=<span class="val">"card-title"</span><span class="tag">&gt;</span>Card Title<span class="tag">&lt;/h5&gt;</span>
+    <span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="val">"card-text"</span><span class="tag">&gt;</span>Some description text here.<span class="tag">&lt;/p&gt;</span>
+    <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"#"</span> <span class="attr">class</span>=<span class="val">"btn btn-primary"</span><span class="tag">&gt;</span>Go somewhere<span class="tag">&lt;/a&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span></pre>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="bs-demo">
+      <div class="section-divider"><h3>Live Bootstrap Demo</h3></div>
+      <div class="demo-box">
+        <div class="demo-header"><i class="fas fa-circle" style="color:#5cfc8a"></i>&nbsp;<span class="demo-live">Live</span> — Bootstrap Components in Action</div>
+        <div class="demo-content">
+          <div class="alert alert-success alert-dismissible fade show" role="alert" style="font-size:.85rem">
+            <strong>Success!</strong> This is a Bootstrap success alert.
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+          <div class="alert alert-warning" role="alert" style="font-size:.85rem">
+            <strong>Warning:</strong> Bootstrap handles all the styling automatically.
+          </div>
+          <div class="d-flex gap-2 flex-wrap mb-3">
+            <button class="btn btn-primary">Primary</button>
+            <button class="btn btn-secondary">Secondary</button>
+            <button class="btn btn-success">Success</button>
+            <button class="btn btn-danger">Danger</button>
+            <button class="btn btn-outline-primary">Outline</button>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="card h-100" style="background:var(--surface2);border-color:var(--border);color:var(--text)">
+                <div class="card-body">
+                  <h5 class="card-title" style="color:var(--accent)">HTML</h5>
+                  <p class="card-text" style="font-size:.82rem;color:var(--muted)">The structure layer. All visible content starts here.</p>
+                  <a href="html.html" class="btn btn-sm btn-primary">Learn More</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100" style="background:var(--surface2);border-color:var(--border);color:var(--text)">
+                <div class="card-body">
+                  <h5 class="card-title" style="color:var(--accent)">CSS</h5>
+                  <p class="card-text" style="font-size:.82rem;color:var(--muted)">The style layer. Controls all visual presentation.</p>
+                  <a href="css.html" class="btn btn-sm btn-primary">Learn More</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100" style="background:var(--surface2);border-color:var(--border);color:var(--text)">
+                <div class="card-body">
+                  <h5 class="card-title" style="color:var(--accent)">JavaScript</h5>
+                  <p class="card-text" style="font-size:.82rem;color:var(--muted)">The behaviour layer. Makes pages interactive.</p>
+                  <a href="javascript.html" class="btn btn-sm btn-primary">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4">
+            <p style="font-size:.8rem;color:var(--muted);margin-bottom:.75rem">Bootstrap progress bars — <code>class="progress"</code></p>
+            <div class="progress mb-2" style="height:8px;background:var(--surface2)">
+              <div class="progress-bar" style="width:85%;background:var(--accent)">HTML — 85%</div>
+            </div>
+            <div class="progress mb-2" style="height:8px;background:var(--surface2)">
+              <div class="progress-bar" style="width:78%;background:var(--accent2)">CSS — 78%</div>
+            </div>
+            <div class="progress" style="height:8px;background:var(--surface2)">
+              <div class="progress-bar" style="width:70%;background:var(--accent3)">JavaScript — 70%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">Alex<span>Dev</span></div>
+    <div>Module 04 — Bootstrap</div>
+    <div style="display:flex;gap:.5rem">
+      <button class="btn-outline-custom" style="padding:.6rem 1rem;font-size:.72rem" onclick="window.location.href='css.html'"><i class="fas fa-arrow-left"></i> Back</button>
+      <button class="btn-primary-custom" style="padding:.6rem 1.2rem;font-size:.72rem" onclick="window.location.href='javascript.html'">Next: JavaScript <i class="fas fa-arrow-right"></i></button>
+    </div>
+  </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
