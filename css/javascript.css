@@ -1,0 +1,161 @@
+/* ====== PAGE 5: JAVASCRIPT ====== */
+.js-playground {
+  background: #0d0d14;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.js-play-header {
+  background: var(--surface2);
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+.js-play-btn {
+  background: var(--accent);
+  border: none;
+  color: white;
+  padding: 0.35rem 1rem;
+  border-radius: 6px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.js-play-btn:hover { background: #6a4de8; }
+.js-output {
+  padding: 1rem 1.25rem;
+  font-size: 0.8rem;
+  color: var(--accent3);
+  min-height: 60px;
+  border-top: 1px solid var(--border);
+}
+.js-output span { color: var(--muted); }
+
+/* Calculator */
+.calculator {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  max-width: 280px;
+  margin: 0 auto;
+}
+.calc-display {
+  background: #0d0d14;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: right;
+  margin-bottom: 1rem;
+}
+.calc-display .calc-prev { font-size: 0.7rem; color: var(--muted); min-height: 1.2em; }
+.calc-display .calc-cur { font-size: 1.8rem; font-weight: 500; color: var(--text); word-break: break-all; }
+.calc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; }
+.calc-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 0.9rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.calc-btn:hover { background: var(--surface2); border-color: var(--accent); }
+.calc-btn.op { color: var(--accent); }
+.calc-btn.eq { background: var(--accent); border-color: var(--accent); color: white; }
+.calc-btn.eq:hover { background: #6a4de8; }
+.calc-btn.clear { color: var(--accent2); }
+
+/* Todo list */
+.todo-app {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.todo-input-area {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.todo-input {
+  flex: 1;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.6rem 0.9rem;
+  border-radius: 6px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.82rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.todo-input:focus { border-color: var(--accent); }
+.todo-add-btn {
+  background: var(--accent);
+  border: none;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.82rem;
+  transition: background 0.2s;
+}
+.todo-add-btn:hover { background: #6a4de8; }
+.todo-list { list-style: none; max-height: 220px; overflow-y: auto; }
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.82rem;
+  transition: background 0.2s;
+}
+.todo-item:hover { background: var(--surface2); }
+.todo-item.done span { text-decoration: line-through; color: var(--muted); }
+.todo-check {
+  width: 18px; height: 18px;
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.todo-check.checked { background: var(--accent3); border-color: var(--accent3); color: #0a0a0f; font-size: 0.65rem; }
+.todo-del { margin-left: auto; color: var(--muted); cursor: pointer; font-size: 0.75rem; transition: color 0.2s; }
+.todo-del:hover { color: var(--accent2); }
+.todo-footer { padding: 0.6rem 1rem; font-size: 0.7rem; color: var(--muted); display: flex; justify-content: space-between; }
+
+/* Color picker demo */
+.color-playground {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+.color-preview {
+  height: 80px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.color-controls { display: flex; gap: 1rem; flex-wrap: wrap; }
+.color-slider-group { flex: 1; min-width: 140px; }
+.color-slider-group label { font-size: 0.72rem; color: var(--muted); display: block; margin-bottom: 0.3rem; }
+.color-slider { width: 100%; height: 4px; border-radius: 2px; outline: none; cursor: pointer; }

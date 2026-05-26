@@ -1,0 +1,16 @@
+/* ====== PAGE 4: BOOTSTRAP ====== */
+.grid-demo {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.grid-col {
+  background: rgba(124,92,252,0.15);
+  border: 1px solid rgba(124,92,252,0.3);
+  border-radius: 4px;
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 0.75rem;
+  margin: 0.25rem;
+  color: var(--accent);
+}

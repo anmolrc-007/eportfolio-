@@ -1,0 +1,28 @@
+/* ====== PAGE 2: HTML ====== */
+.html-demo-area {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  color: #333;
+  font-family: Georgia, serif;
+}
+.html-demo-area h1 { font-size: 1.5rem; color: #c00; margin-bottom: 0.5rem; }
+.html-demo-area p { font-size: 0.9rem; line-height: 1.6; margin-bottom: 0.75rem; }
+.html-demo-area ul { padding-left: 1.5rem; font-size: 0.9rem; }
+.html-demo-area a { color: blue; text-decoration: underline; }
+.html-demo-area table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.5rem; }
+.html-demo-area th { background: #c00; color: white; padding: 0.4rem 0.7rem; text-align: left; }
+.html-demo-area td { border: 1px solid #ddd; padding: 0.4rem 0.7rem; }
+
+/* Structure tree */
+.tree {
+  font-size: 0.82rem;
+  line-height: 2;
+  padding: 1.5rem;
+  background: #0d0d14;
+  border-radius: 8px;
+}
+.tree-item { padding-left: 1.5rem; border-left: 1px dashed var(--border); margin-left: 0.5rem; }
+.tree-tag { color: #e06c75; }
+.tree-attr { color: #d19a66; }
+.tree-text { color: var(--muted); font-style: italic; }

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anmol Ratna Chhetri | CSS</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+
+<!-- Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">Anmol<span>Chhetri</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" id="nav-home">Home</a></li>
+    <li><a href="fullstack.html" id="nav-fullstack">Full Stack</a></li>
+    <li><a href="html.html" id="nav-html">HTML</a></li>
+    <li><a href="css.html" class="active" id="nav-css">CSS</a></li>
+    <li><a href="bootstrap.html" id="nav-bootstrap">Bootstrap</a></li>
+    <li><a href="javascript.html" id="nav-javascript">JavaScript</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+</nav>
+
+<div class="page active" id="page-css">
+  <div class="page-hero" data-bg-text="CSS">
+    <div>
+      <div class="page-tag">Module 03</div>
+      <div class="page-num">Cascading Style Sheets</div>
+      <h1 class="page-title"><span class="accent">CSS</span> — The Style</h1>
+    </div>
+  </div>
+
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab(this,'css-intro')">Introduction</button>
+    <button class="tab-btn" onclick="switchTab(this,'css-selectors')">Selectors</button>
+    <button class="tab-btn" onclick="switchTab(this,'css-box')">Box Model</button>
+    <button class="tab-btn" onclick="switchTab(this,'css-flexbox')">Flexbox</button>
+    <button class="tab-btn" onclick="switchTab(this,'css-demo')">Interactive Demo</button>
+  </div>
+
+  <div class="content-area">
+    <div class="tab-panel active" id="css-intro">
+      <div class="section-divider"><h3>What is CSS?</h3></div>
+      <div class="callout">
+        <strong>CSS (Cascading Style Sheets)</strong> controls the visual presentation of HTML. It defines colours, fonts, spacing, layout, animations, and responsiveness. The word <em>cascading</em> refers to how styles are prioritised and inherited from parent to child elements.
+      </div>
+      <div class="concept-grid">
+        <div class="concept-card">
+          <h4><i class="fas fa-palette"></i> Colors & Typography</h4>
+          <p>CSS supports hex (<code style="color:var(--accent3)">#7c5cfc</code>), RGB (<code style="color:var(--accent3)">rgb(124,92,252)</code>), and named colours. Typography properties control font-family, font-size, font-weight, line-height, and letter-spacing.</p>
+        </div>
+        <div class="concept-card">
+          <h4><i class="fas fa-th"></i> Layout Systems</h4>
+          <p>Modern CSS layout is dominated by <strong>Flexbox</strong> (one-dimensional) and <strong>Grid</strong> (two-dimensional). These replaced older float-based layouts and make responsive design far simpler.</p>
+        </div>
+        <div class="concept-card">
+          <h4><i class="fas fa-mobile-alt"></i> Responsive Design</h4>
+          <p><strong>Media queries</strong> allow different styles for different screen sizes: <code style="color:var(--accent3)">@media (max-width: 768px) { ... }</code>. This is the foundation of mobile-first design.</p>
+        </div>
+        <div class="concept-card">
+          <h4><i class="fas fa-film"></i> Animations & Transitions</h4>
+          <p>CSS <code>transition</code> smoothly animates property changes. <code>@keyframes</code> defines complex multi-step animations — all without JavaScript. Keeps interactivity performant and smooth.</p>
+        </div>
+      </div>
+      <div class="section-divider"><h3>Three Ways to Add CSS</h3></div>
+      <div class="code-block">
+        <div class="code-header">
+          <div style="display:flex;align-items:center;gap:1rem">
+            <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+            <span class="code-lang">CSS — Syntax & Application Methods</span>
+          </div>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+<pre><span class="cm">/* 1. EXTERNAL — Best practice. Separate .css file linked in &lt;head&gt; */</span>
+<span class="tag">p</span> {
+  <span class="attr">color</span>: <span class="val">#333</span>;
+  <span class="attr">font-size</span>: <span class="val">16px</span>;
+}
+
+<span class="cm">/* 2. INTERNAL — &lt;style&gt; tag inside &lt;head&gt; */</span>
+<span class="tag">h1</span> { <span class="attr">color</span>: <span class="val">navy</span>; }
+
+<span class="cm">/* 3. INLINE — style attribute directly on element */</span>
+<span class="tag">&lt;p</span> <span class="attr">style</span>=<span class="val">"color: red; font-weight: bold;"</span><span class="tag">&gt;</span>Text<span class="tag">&lt;/p&gt;</span>
+
+<span class="cm">/* CSS Variables — reusable custom properties */</span>
+<span class="tag">:root</span> {
+  <span class="attr">--primary-color</span>: <span class="val">#7c5cfc</span>;
+  <span class="attr">--font-size-lg</span>: <span class="val">1.25rem</span>;
+}
+<span class="tag">button</span> { <span class="attr">background</span>: <span class="fn">var</span>(--primary-color); }</pre>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="css-selectors">
+      <div class="section-divider"><h3>CSS Selectors</h3></div>
+      <div class="callout">Selectors determine <em>which</em> HTML elements a CSS rule applies to. Understanding selector specificity is key to avoiding style conflicts.</div>
+      <div class="code-block">
+        <div class="code-header">
+          <div style="display:flex;align-items:center;gap:1rem">
+            <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+            <span class="code-lang">CSS — Selector Types</span>
+          </div>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+<pre><span class="cm">/* Element selector — targets all &lt;p&gt; tags */</span>
+<span class="tag">p</span> { <span class="attr">color</span>: <span class="val">gray</span>; }
+
+<span class="cm">/* Class selector — targets class="highlight" */</span>
+<span class="tag">.highlight</span> { <span class="attr">background</span>: <span class="val">yellow</span>; }
+
+<span class="cm">/* ID selector — targets id="main-title" (unique) */</span>
+<span class="tag">#main-title</span> { <span class="attr">font-size</span>: <span class="val">2rem</span>; }
+
+<span class="cm">/* Descendant — p inside a .card */</span>
+<span class="tag">.card p</span> { <span class="attr">padding</span>: <span class="val">1rem</span>; }
+
+<span class="cm">/* Pseudo-class — button when hovered */</span>
+<span class="tag">button:hover</span> { <span class="attr">background</span>: <span class="val">blue</span>; }
+
+<span class="cm">/* Pseudo-element — first line of paragraph */</span>
+<span class="tag">p::first-line</span> { <span class="attr">font-weight</span>: <span class="val">bold</span>; }
+
+<span class="cm">/* Specificity order: ID (1,0,0) > Class (0,1,0) > Element (0,0,1) */</span></pre>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="css-box">
+      <div class="section-divider"><h3>The CSS Box Model</h3></div>
+      <div class="callout">Every HTML element is a rectangular box. The box model defines how space is calculated: <strong>content → padding → border → margin</strong>.</div>
+      <div class="demo-box">
+        <div class="demo-header"><i class="fas fa-square"></i>&nbsp; Visual Box Model</div>
+        <div class="demo-content">
+          <div class="box-model" style="text-align:center">
+            <div class="bm-margin">
+              <div class="bm-label">Margin (outside space)</div>
+              <div class="bm-border">
+                <div class="bm-label" style="color:var(--accent2)">Border</div>
+                <div class="bm-padding">
+                  <div class="bm-label" style="color:var(--accent3)">Padding (inside space)</div>
+                  <div class="bm-content">Content</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="code-block">
+        <div class="code-header">
+          <div style="display:flex;align-items:center;gap:1rem">
+            <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+            <span class="code-lang">CSS — Box Model Properties</span>
+          </div>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+<pre><span class="tag">.box</span> {
+  <span class="attr">width</span>: <span class="val">300px</span>;         <span class="cm">/* Content width */</span>
+  <span class="attr">padding</span>: <span class="val">20px</span>;        <span class="cm">/* Space inside the border */</span>
+  <span class="attr">border</span>: <span class="val">2px solid #333</span>; <span class="cm">/* Visible edge */</span>
+  <span class="attr">margin</span>: <span class="val">16px auto</span>;   <span class="cm">/* Space outside (auto = centred) */</span>
+  <span class="attr">box-sizing</span>: <span class="val">border-box</span>; <span class="cm">/* Include padding in width calc */</span>
+}</pre>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="css-flexbox">
+      <div class="section-divider"><h3>CSS Flexbox</h3></div>
+      <div class="callout">Flexbox makes it easy to align and distribute elements along a single axis (row or column). It's the most commonly used layout method in modern web development.</div>
+      <div class="code-block">
+        <div class="code-header">
+          <div style="display:flex;align-items:center;gap:1rem">
+            <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+            <span class="code-lang">CSS — Flexbox Layout</span>
+          </div>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+<pre><span class="tag">.container</span> {
+  <span class="attr">display</span>: <span class="val">flex</span>;              <span class="cm">/* Activate Flexbox */</span>
+  <span class="attr">flex-direction</span>: <span class="val">row</span>;        <span class="cm">/* row | column */</span>
+  <span class="attr">justify-content</span>: <span class="val">center</span>;   <span class="cm">/* Main axis alignment */</span>
+  <span class="attr">align-items</span>: <span class="val">center</span>;       <span class="cm">/* Cross axis alignment */</span>
+  <span class="attr">gap</span>: <span class="val">1rem</span>;                  <span class="cm">/* Space between items */</span>
+  <span class="attr">flex-wrap</span>: <span class="val">wrap</span>;            <span class="cm">/* Wrap to next line if needed */</span>
+}
+<span class="tag">.item</span> {
+  <span class="attr">flex</span>: <span class="val">1</span>;                    <span class="cm">/* Grow to fill space equally */</span>
+}</pre>
+      </div>
+      <div class="demo-box">
+        <div class="demo-header"><i class="fas fa-magic"></i>&nbsp; Interactive Flexbox — Change justify-content:</div>
+        <div class="demo-content">
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem">
+            <button class="copy-btn" style="padding:.4rem .8rem" onclick="setFlex('flex-start')">flex-start</button>
+            <button class="copy-btn" style="padding:.4rem .8rem" onclick="setFlex('center')">center</button>
+            <button class="copy-btn" style="padding:.4rem .8rem" onclick="setFlex('flex-end')">flex-end</button>
+            <button class="copy-btn" style="padding:.4rem .8rem" onclick="setFlex('space-between')">space-between</button>
+            <button class="copy-btn" style="padding:.4rem .8rem" onclick="setFlex('space-around')">space-around</button>
+          </div>
+          <div class="flex-demo" id="flexDemo">
+            <div class="flex-item">Box 1</div>
+            <div class="flex-item" style="background:var(--accent2)">Box 2</div>
+            <div class="flex-item" style="background:var(--accent3);color:#0a0a0f">Box 3</div>
+          </div>
+          <p style="font-size:0.72rem;color:var(--muted);margin-top:0.75rem">Current: <code id="flexLabel" style="color:var(--accent3)">flex-start</code></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="css-demo">
+      <div class="section-divider"><h3>Interactive CSS Colour Demo</h3></div>
+      <p style="font-size:0.82rem;color:var(--muted);margin-bottom:1.2rem">Use the sliders below to mix RGB values and see how CSS constructs colours in real time. This demonstrates how <code>rgb(r, g, b)</code> works in CSS.</p>
+      <div class="color-playground">
+        <div class="color-preview" id="colorPreview" style="background:rgb(124,92,252);color:white">
+          rgb(124, 92, 252)
+        </div>
+        <div class="color-controls">
+          <div class="color-slider-group">
+            <label>Red: <strong id="rVal">124</strong></label>
+            <input type="range" class="color-slider" id="rSlider" min="0" max="255" value="124" style="accent-color:#fc5c5c" oninput="updateColor()">
+          </div>
+          <div class="color-slider-group">
+            <label>Green: <strong id="gVal">92</strong></label>
+            <input type="range" class="color-slider" id="gSlider" min="0" max="255" value="92" style="accent-color:#5cfc8a" oninput="updateColor()">
+          </div>
+          <div class="color-slider-group">
+            <label>Blue: <strong id="bVal">252</strong></label>
+            <input type="range" class="color-slider" id="bSlider" min="0" max="255" value="252" style="accent-color:#5c8afc" oninput="updateColor()">
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"><h3>CSS Animation Demo</h3></div>
+      <div class="demo-box">
+        <div class="demo-header"><i class="fas fa-film"></i>&nbsp; CSS @keyframes Animation</div>
+        <div class="demo-content" style="text-align:center;padding:2.5rem">
+          <div id="animBox" style="
+            width:80px;height:80px;
+            background:linear-gradient(135deg,var(--accent),var(--accent2));
+            border-radius:12px;
+            margin:0 auto 1.5rem;
+            animation:spin 3s linear infinite;
+          "></div>
+          <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap">
+            <button class="copy-btn" style="padding:.5rem 1rem" onclick="document.getElementById('animBox').style.animationPlayState='running'">▶ Play</button>
+            <button class="copy-btn" style="padding:.5rem 1rem" onclick="document.getElementById('animBox').style.animationPlayState='paused'">⏸ Pause</button>
+          </div>
+          <p style="font-size:0.72rem;color:var(--muted);margin-top:1rem">This box uses CSS <code>@keyframes</code> — no JavaScript required for the animation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-logo">Alex<span>Dev</span></div>
+    <div>Module 03 — CSS</div>
+    <div style="display:flex;gap:.5rem">
+      <button class="btn-outline-custom" style="padding:.6rem 1rem;font-size:.72rem" onclick="window.location.href='html.html'"><i class="fas fa-arrow-left"></i> Back</button>
+      <button class="btn-primary-custom" style="padding:.6rem 1.2rem;font-size:.72rem" onclick="window.location.href='bootstrap.html'">Next: Bootstrap <i class="fas fa-arrow-right"></i></button>
+    </div>
+  </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="../js/app.js"></script>
+</body>
+</html>
